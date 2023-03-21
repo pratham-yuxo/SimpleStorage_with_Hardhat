@@ -1,0 +1,2 @@
+##  What is tasks in hardhat
+By doing yarn hardhat ,you can see various tasks that hardhat provide. We can define task of our own which will run in terminal ,we will define them in a folder named tasks and add them in hardhat.confing.js file

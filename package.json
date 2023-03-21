@@ -23,4 +23,3 @@
     "lint:fix": "yarn prettier --write ."
   }
 }
-// 8 35
