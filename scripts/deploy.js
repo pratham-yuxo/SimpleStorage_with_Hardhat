@@ -18,7 +18,8 @@ async function main() {
 
     // what happens when we deploy to our hardhat network?
     console.log(network.config.chainId)
-    //  we don't verify in hardhat chain 11155111 is the chain id of hardhat etherscan
+    //  we don't verify in hardhat chain 31337 is the chain id of hardhat etherscan
+    // we will only verify if it is sepolia and api key exists
     if (network.config.chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
         console.log("Waiting for block confirmations...")
         await simpleStorage.deployTransaction.wait(6)
@@ -53,18 +54,6 @@ async function main() {
                     console.log(e)
                 }
             }
-            // try {
-            //     await run("verify:verify", {
-            //         address: contractAddress,
-            //         constructorArguments: args,
-            //     })
-            // } catch (e) {
-            //     if (e.message.toLowerCase().includes("already verified")) {
-            //         console.log("Already Verified!")
-            //     } else {
-            //         console.log(e)
-            //     }
-            // }
         }
     }
 }
@@ -77,4 +66,4 @@ main()
         process.exit(1)
     })
 // api key => BDUEFB2K566FCDU6W4K14868B2PZCT3U1V
-// 8:55
+// yarn hardhat clean
